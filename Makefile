@@ -13,16 +13,18 @@ WHITE			= \033[0;38m
 RESET			= \033[0m
 
 
-ECHO = echo -e
+ECHO		= echo -e
 
-SRC_DIR = src/
-INP_DIR = inputs/
-FILES = d1p1.cpp d1p2.cpp
-SRC = $(addprefix $(SRC_DIR),FILES)
-INPUTS = $(addprefix $(INP_DIR),$(FILES))
-NAMES = $(basename $(FILES))
-CXXFLAGS = -Wall -Wextra -Werror
-RUN = 0
+SRC_DIR		= src/
+INP_DIR		= inputs/
+FILES		= d1p1.cpp d1p2.cpp \
+			  d2p1.cpp d2p2.cpp
+
+SRC			= $(addprefix $(SRC_DIR),FILES)
+INPUTS		= $(addprefix $(INP_DIR),$(FILES))
+NAMES		= $(basename $(FILES))
+CXXFLAGS	= -Wall -Wextra -Werror
+RUN			= 0
 
 
 # FUNCTIONS
@@ -31,7 +33,7 @@ all: run
 
 %: src/%.cpp
 	@$(ECHO) "$(GREEN)>>> compiling $(WHITE)$<$(RESET)"
-	@g++ $< $(CFLAGS) -o $@
+	@g++ $< $(CXXFLAGS) -o $@
 
 run: $(NAMES)
 ifeq ($(RUN), 0)
