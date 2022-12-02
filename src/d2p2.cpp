@@ -19,9 +19,6 @@ int main()
 	int total_score = 0;
 	std::string s;
 	while (std::getline(std::cin, s))
-	{
-		std::cout << s << " , score: " << whatPick(s[0], s[2]) << std::endl;
 		total_score += ((s[2] - 'X') * 3) + whatPick(s[0], s[2]);
-	}
 	std::cout << "total: " << total_score << std::endl;
 }
