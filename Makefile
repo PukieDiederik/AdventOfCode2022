@@ -18,7 +18,8 @@ ECHO		= echo -e
 SRC_DIR		= src/
 INP_DIR		= inputs/
 FILES		= d1p1.cpp d1p2.cpp \
-			  d2p1.cpp d2p2.cpp
+			  d2p1.cpp d2p2.cpp \
+			  d3p1.cpp d3p2.cpp
 
 SRC			= $(addprefix $(SRC_DIR),FILES)
 INPUTS		= $(addprefix $(INP_DIR),$(FILES))
