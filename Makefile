@@ -22,7 +22,8 @@ FILES		= d1p1.cpp d1p2.cpp \
 			  d3p1.cpp d3p2.cpp \
 			  d4p1.cpp d4p2.cpp \
 			  d5p1.cpp d5p2.cpp \
-			  d6p1.cpp d6p2.cpp
+			  d6p1.cpp d6p2.cpp \
+			  d7p1.cpp
 
 SRC			= $(addprefix $(SRC_DIR),FILES)
 INPUTS		= $(addprefix $(INP_DIR),$(FILES))

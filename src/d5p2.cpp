@@ -55,7 +55,6 @@ int main()
 		}
 	}
 //	std::cout << towers[0].empty() << towers[1].empty() << towers[2].empty() << std::endl;
-//	std::cout << towers[0].top() << towers[1].top() << towers[2].top() << std::endl;
 	std::cout << towers[0].top() << towers[1].top() << towers[2].top() << towers[3].top() << towers[4].top()
 			  << towers[5].top() << towers[6].top() << towers[7].top() << towers[8].top() << std::endl;
 }
