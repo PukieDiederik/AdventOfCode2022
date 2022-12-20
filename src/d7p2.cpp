@@ -14,14 +14,16 @@ struct treeNode
 	treeNode(treeNode *_parent, const std::string& _name) : parent(_parent), name(_name) { }
 };
 
-int dfs(treeNode& node)
+void dfs(treeNode& node, treeNode** best, int size_req)
 {
-	int total = 0;
+	if (node.totalSize < size_req)
+		return;
+	if (node.totalSize >= size_req && node.totalSize < (*best)->totalSize)
+		*best = &node;
 	for (auto i = node.children.begin(); i != node.children.end(); i++)
 	{
-		total += dfs(*i);
+		dfs(*i, best, size_req);
 	}
-	return total + ((node.totalSize < 100000) ? node.totalSize : 0);
 }
 
 int main()
@@ -70,6 +72,8 @@ int main()
 			std::cerr << "something went wrong\n";
 	}
 
-	// Computing
-	std::cout << dfs(tree) << std::endl;
+	treeNode *best = &tree;
+	int size_req = tree.totalSize - 40000000;
+	dfs(tree, &best, size_req);
+	std::cout << "size required: " << size_req << ", minimal size found: " << best->totalSize << std::endl;
 }
